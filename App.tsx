@@ -22,23 +22,23 @@ export default function App() {
 
   useEffect(() => {
     // ### VISUALIZAR NOTIFICAÇÕES DISPARADAS ###
-    const subscription = Notifications.addNotificationReceivedListener(
-      async (notification) => {
-        const data = notification.request.content.data.plant as PlantProps;
-        console.log(data);
-      }
-    );
+    // const subscription = Notifications.addNotificationReceivedListener(
+    //   async (notification) => {
+    //     const data = notification.request.content.data.plant as PlantProps;
+    //     console.log(data);
+    //   }
+    // );
 
-    return () => subscription.remove();
+    // return () => subscription.remove();
 
     // ### VER NOTIFICAÇÕES AGENDADAS ###
-    // async function notification() {
-    //   const data = await Notifications.getAllScheduledNotificationsAsync();
-    //   console.log("######### NOTIFICAÇÕES AGENDADAS #########");
-    //   console.log(data);
-    // }
+    async function notification() {
+      const data = await Notifications.getAllScheduledNotificationsAsync();
+      console.log("######### NOTIFICAÇÕES AGENDADAS #########");
+      console.log(data);
+    }
 
-    // notification();
+    notification();
 
     // ### REMOVER NOTIFICAÇÕES AGENDADAS ###
     // async function removeAllNotifications() {
